@@ -12,4 +12,5 @@ fun main(){
     println(sumWorkersWages)
     println(sumWages)
     println(averageWages)
+
 }
