@@ -12,4 +12,5 @@ fun main() {
 
     println("$hourEnd:$minuteEnd")
 }
+
 const val TIME = 60
