@@ -10,5 +10,6 @@ fun main() {
     val formMinutes = String.format("%02d", remMinutes)
     val formHours = String.format("%02d", hours)
     println("$formHours:$formMinutes:$formSeconds")
+
 }
 const val TIME = 60
