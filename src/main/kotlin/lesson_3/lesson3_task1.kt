@@ -1,7 +1,7 @@
 package org.example.lesson_3
 
 fun main() {
-    var userName = "Виктория"
+    val userName = "Виктория"
     var greetings = "Добрый день"
     println("$greetings, $userName")
     greetings = "Добрый вечер"
