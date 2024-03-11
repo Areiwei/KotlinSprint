@@ -2,15 +2,12 @@ package org.example.lesson_4
 
 fun main() {
     var day = 5
-    val trainDay = day % 2 == 0
-
-    val armsPress = !trainDay
-    val legsShoulders = trainDay
+    val isTrainDay = day % 2 == 0
 
     println("""
-        |Упражнение для рук:    $armsPress
-        |Упражнение для ног:    $legsShoulders
-        |Упражнение для спины:  $legsShoulders
-        |Упражнение для пресса: $armsPress
+        |Упражнение для рук:    ${!isTrainDay}
+        |Упражнение для ног:    $isTrainDay
+        |Упражнение для спины:  $isTrainDay
+        |Упражнение для пресса: ${!isTrainDay}
     """.trimIndent())
 }
