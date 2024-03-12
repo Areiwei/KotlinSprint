@@ -1,11 +1,12 @@
 package org.example.lesson_5
 
 fun main() {
-    val antiBot = 1337
-    println("Решите пример: 1300 + 37 =?")
-    val example = readLine()?.toInt()
+    val a = (0..100).random()
+    val b = (0..100).random()
+    println("Решите пример: $a + $b = ?")
+    val example = readln().toInt()
 
-    val resultText = if (example == antiBot) "Добро пожаловать!"
+    val resultText = if (example == (a + b)) "Добро пожаловать!"
     else "Доступ запрещен."
     println(resultText)
 }
