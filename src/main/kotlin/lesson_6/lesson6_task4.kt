@@ -6,7 +6,7 @@ fun main() {
 
     val number = Random
     val rndNumber = List(1) { number.nextInt(10) }
-    println(rndNumber)
+
     println("Угадайте загадонное число от 1 до 9. У вас есть 5 попыток!")
 
     var attempt = 5
