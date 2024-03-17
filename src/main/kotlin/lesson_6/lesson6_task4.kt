@@ -4,8 +4,7 @@ import kotlin.random.Random
 
 fun main() {
 
-    val number = Random
-    val rndNumber = List(1) { number.nextInt(10) }
+    val rndNumber = (1..9).random()
 
     println("Угадайте загадонное число от 1 до 9. У вас есть 5 попыток!")
 
@@ -14,15 +13,15 @@ fun main() {
     do {
         var userNumber = readln().toInt()
 
-        if (rndNumber[0] == userNumber) {
+        if (rndNumber == userNumber) {
             println("Это была великолепная игра!")
-            break
+            return
         } else {
             println("Неверно, осталось ${--attempt} попыток")
         }
     } while (attempt > 0)
 
-    if (attempt <= 0) println("Было загадано число ${rndNumber[0]}")
+    println("Было загадано число $rndNumber")
 
 }
 
