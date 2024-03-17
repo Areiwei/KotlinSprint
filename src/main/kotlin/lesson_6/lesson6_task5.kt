@@ -14,11 +14,11 @@ fun main() {
         val entryField = readln().toInt()
         if (antiBot == entryField) {
             println("Добро пожаловать!")
-            break
+            return
         } else {
             println("Неверно, у вас осталось ${--countAttempts} попыток")
         }
 
-    } while (countAttempts>0)
-    if (countAttempts <= 0) println("Доступ запрещен.")
+    } while (countAttempts > 0)
+    println("Доступ запрещен.")
 }
