@@ -11,15 +11,20 @@ fun main() {
     } while (inputRange < MINIMUM_CHARACTERS)
 
 
-    val rangePassNumbers = 1..9
-    val rangePassWords = ('a'..'z')
-    val rangePassCapWords = ('A'..'Z')
+    val rangePassNumbers = (1..9)
+    val rangePassWords = 'a'..'z'
+    val rangePassCapWords = 'A'..'Z'
 
-    var listOfSymbols = (rangePassWords.toList() + rangePassNumbers.toList() + rangePassCapWords.toList())
-    val shuffledSymbols = listOfSymbols.shuffled().joinToString("")
-    val generatedPassword = shuffledSymbols.substring(0, inputRange)
+    var generatedPassword: String
+    do {
+        val listOfSymbols = (rangePassWords + rangePassNumbers + rangePassCapWords)
+        val shuffledSymbols = listOfSymbols.shuffled().joinToString("")
+        generatedPassword = shuffledSymbols.substring(0, inputRange)
+    } while (!(rangePassWords.any { it in generatedPassword } && rangePassNumbers.any
+        { it.toString() in generatedPassword } && rangePassCapWords.any { it in generatedPassword }))
 
     println("Ваш пароль: $generatedPassword")
 }
 
 const val MINIMUM_CHARACTERS = 6
+
