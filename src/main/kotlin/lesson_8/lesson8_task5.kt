@@ -3,13 +3,13 @@ package org.example.lesson_8
 fun main() {
 
     println("Сколько ингредиентов планируется ввести?")
-    val howIngredients = readln().toInt()
+    val countOfIngredients = readln().toInt()
 
-    val ingredientsArray = arrayOfNulls<String>(howIngredients)
+    val ingredientsArray = arrayOfNulls<String>(countOfIngredients)
     var currentIndex = 0
 
     println("Введите по очереди наименование ингредиентов")
-    repeat(howIngredients) {
+    repeat(countOfIngredients) {
         val inputIngredients = readln()
         ingredientsArray[(currentIndex)] = inputIngredients
         currentIndex++
