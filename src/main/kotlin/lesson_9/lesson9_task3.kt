@@ -5,5 +5,6 @@ fun main() {
     println("Сколько порций требуется?")
     val countPortion = readln().toInt()
     val omeletteIngredientsCount = omeletteIngredients.map { it * countPortion }
-    println(omeletteIngredientsCount)
+    println("На $countPortion порций вам понадобится: яиц ${omeletteIngredientsCount[0]} шт," +
+            "молока ${omeletteIngredientsCount[1]} мл., сливочного масла ${omeletteIngredientsCount[2]} гр.")
 }
