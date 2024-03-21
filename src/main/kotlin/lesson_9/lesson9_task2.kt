@@ -8,9 +8,7 @@ fun main() {
     println("Желаете добавить ещё?(да/нет)")
     val moreIngredients = readln()
     val yes1 = "да"
-    val yes2 = "Да"
-    if (moreIngredients.equals(yes1, ignoreCase = true) ||
-        moreIngredients.equals(yes2, ignoreCase = true)
+    if (moreIngredients.equals(yes1, ignoreCase = true)
     ) {
         println("Какой ингредиент вы хотите добавить?")
     } else {
