@@ -5,16 +5,15 @@ fun main() {
     val login = readln()
     println("Введите пароль")
     val pass = readln()
-
-
-    if (setMinimumLength(login, pass)) {
+    if (validateLength(lengthLine = login) || validateLength(lengthLine = pass)) {
         println("Логин или пароль недостаточно длинные")
     } else {
         println("Добро пожаловать!")
     }
 }
 
-fun setMinimumLength(login: String, pass: String) : Boolean {
-    val minLength = 4
-    return login.length < minLength || pass.length < minLength
+fun validateLength(lengthLine: String): Boolean {
+    return lengthLine.length < MINIMAL_SYMBOLS
 }
+
+const val MINIMAL_SYMBOLS = 4
