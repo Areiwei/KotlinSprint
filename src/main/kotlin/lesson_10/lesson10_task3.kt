@@ -1,15 +1,15 @@
 package org.example.lesson_10
 
 fun main() {
-
-    generatePassword()
-}
-
-fun generatePassword() {
-    val symbols = listOf('!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ' ').shuffled()
-    val numbers = (0..9).toList().shuffled()
-    val password = symbols.zip(numbers).flatMap { (s, n) -> listOf(s, n) }.joinToString("")
     println("Введите длину желаемого пароля")
     val passwordLength = readln().toInt()
-    return println(password.substring(0, passwordLength))
+    println(generatePassword(passwordLength))
+
+}
+
+fun generatePassword(passwordLength: Int): String {
+    val symbolsRange = ('\u0021'..'\u002F').shuffled()
+    val numbers = (0..9).toList().shuffled()
+    val passwords = symbolsRange.zip(numbers).flatMap { (s, n) -> listOf(s, n) }.joinToString("")
+    return passwords.substring(0, passwordLength)
 }
