@@ -9,29 +9,25 @@ fun main() {
     showCart(success)
 }
 
+fun generateToken(): String {
+    val chars = ('A'..'Z') + (0..9) + ('a'..'z')
+    return (0..31).map { chars.random() }.joinToString("")
+}
+
 fun authorize(inputLogin: String?, inputPass: String?): String? {
-    val login = ("nagibatorPWNZ")
-    val pass = ("1q2w3e")
-    val tokenNumbers = (0..9)
-    val tokenWords = ('a'..'z')
-    val token = (tokenNumbers + tokenWords).shuffled().joinToString("")
-    if (inputLogin == login && inputPass == pass) {
-        return println(token).toString()
+    return if (inputLogin == "nagibatorPWNZ" && inputPass == "1q2w3e") {
+        generateToken()
     } else {
-        println("Неудачная авторизация")
-        return null
+        println("Данные не верны")
+        null
     }
 }
 
 fun showCart(token: String?): Unit? {
     val listOfCart = listOf("мята", "желуди", "свиные ребра", "дрель")
-    if (token != null) {
-        return println(listOfCart)
+    return if (token != null) {
+        println(listOfCart)
     } else {
-        return null
+        null
     }
 }
-
-
-
-
