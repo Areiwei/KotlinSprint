@@ -6,7 +6,8 @@ fun main() {
     println("пароль")
     val inputPass = readln()
     val success = authorize(inputLogin, inputPass)
-    showCart(success)
+    if (authorize(inputLogin, inputPass) == null) println("Неудачная авторизация")
+    println(showCart(success))
 }
 
 fun generateToken(): String {
@@ -15,18 +16,17 @@ fun generateToken(): String {
 }
 
 fun authorize(inputLogin: String?, inputPass: String?): String? {
-    return if (inputLogin == "nagibatorPWNZ" && inputPass == "1q2w3e") {
+    return if (inputLogin == ("nagibatorPWNZ") && inputPass == "1q2w3e") {
         generateToken()
     } else {
-        println("Данные не верны")
         null
     }
 }
 
-fun showCart(token: String?): Unit? {
+fun showCart(token: String?): List<String>? {
     val listOfCart = listOf("мята", "желуди", "свиные ребра", "дрель")
     return if (token != null) {
-        println(listOfCart)
+        listOfCart
     } else {
         null
     }
