@@ -1,7 +1,7 @@
 package org.example.lesson_11
 
 fun main() {
-    val oleg = User2(13, "nagibator", "aloha", "baby1998@mail.ru", "")
+    val oleg = User2(13, "nagibator", "aloha", "baby1998@mail.ru")
     writeBio(oleg)
     changePassword(oleg)
     println(showInformation(oleg))
@@ -35,5 +35,5 @@ class User2(
     val login: String,
     var pass: String,
     val mail: String,
-    var bio: String,
+    var bio: String? = null,
 )
