@@ -1,11 +1,11 @@
 package org.example.lesson_11
 
 fun main() {
-    val user1 = MemberProperty(avatar = "slon.png", nickname = "Bimbo", status = "Разговаривает")
-    val user2 = MemberProperty(avatar = "star.png", nickname = "Povelitel", status = "Микрофон выключен")
-    val user3 = MemberProperty(avatar = "flowers.png", nickname = "Dasha", status = "Пользователь заглушен")
-    val user4 = MemberProperty(avatar = "zombies.png", nickname = "RAMMSTEIN", status = "Микрофон выключен")
-    val user5 = MemberProperty(avatar = "cocojambo.png", nickname = "dReamer", status = "Разговаривает")
+    val user1 = Member(avatar = "slon.png", nickname = "Bimbo", status = "Разговаривает")
+    val user2 = Member(avatar = "star.png", nickname = "Povelitel", status = "Микрофон выключен")
+    val user3 = Member(avatar = "flowers.png", nickname = "Dasha", status = "Пользователь заглушен")
+    val user4 = Member(avatar = "zombies.png", nickname = "RAMMSTEIN", status = "Микрофон выключен")
+    val user5 = Member(avatar = "cocojambo.png", nickname = "dReamer", status = "Разговаривает")
 
     val room1 = Room("logo.png", "Бантики", mutableListOf(user1, user2, user3))
     room1.scrollDown()
@@ -23,22 +23,18 @@ fun main() {
     room2.newStatus("RAMMSTEIN", "Разговаривает")
     room2.newStatus("dReamer", "Микрофон выключен")
     room2.showMemberList()
-
-
 }
 
-class MemberProperty(
+class Member(
     var avatar: String,
     var nickname: String,
     var status: String,
-) {
-
-}
+)
 
 class Room(
     var cover: String,
     var title: String,
-    var memberList: MutableList<MemberProperty>,
+    var memberList: MutableList<Member>,
 ) {
     fun scrollDown() {
         println("Листаем вниз")
@@ -48,7 +44,7 @@ class Room(
         println("Листаем вверх")
     }
 
-    fun longTap(user: MemberProperty) {
+    fun longTap(user: Member) {
         println("Лонг тап по аватару ${user.avatar}")
         highlight(user.nickname)
         println("Аватар: ${user.avatar}, Имя: ${user.nickname}, Статус: ${user.status}")
@@ -58,7 +54,7 @@ class Room(
         println("Подсвечивает никнейм $user")
     }
 
-    fun addInRoom(user: MemberProperty) {
+    fun addInRoom(user: Member) {
         memberList.add(user)
         println("Пользователь ${user.nickname} добавлен в комнату")
     }
